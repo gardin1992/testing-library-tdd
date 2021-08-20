@@ -3,12 +3,12 @@ import { Icon } from "main/components/Icon";
 import { colors } from "styles";
 import * as S from "./styles";
 
-type Props = {
+type SearchProps = {
   query: string;
   setQuery: any;
 };
 
-export function Search(props: Props) {
+export function Search(props: SearchProps) {
   const { query, setQuery } = props;
 
   return (

@@ -1,6 +1,6 @@
 import * as S from "./styles";
 
-type Props = {
+type IconProps = {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   icon: any;
   color?: string;
@@ -10,7 +10,7 @@ type Props = {
   onClick?: (event: React.MouseEvent<HTMLElement>) => void;
 };
 
-export function Icon(props: Props) {
+export function Icon(props: IconProps) {
   const { icon: Component, size, variant, color, title, onClick } = props;
 
   return (

@@ -1,6 +1,15 @@
-import { PokemonModel } from "domain/models";
+export type PokemonTypeProps = {
+  name: string;
+};
 
-export function PokemonCard(props: PokemonModel) {
+export type PokemonCardProps = {
+  order: number;
+  name: string;
+  figure: string;
+  types: PokemonTypeProps[];
+};
+
+export function PokemonCard(props: PokemonCardProps) {
   const { order, name, figure, types } = props;
 
   return (

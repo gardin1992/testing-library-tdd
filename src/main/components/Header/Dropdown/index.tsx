@@ -3,12 +3,12 @@ import { useRef } from "react";
 import { Link } from "react-router-dom";
 import * as S from "./styles";
 
-type Props = {
+type DropdownProps = {
   open: boolean;
   onCloseMenu: () => void;
 };
 
-export function Dropdown(props: Props) {
+export function Dropdown(props: DropdownProps) {
   const { open, onCloseMenu } = props;
 
   function handleLinkClick() {

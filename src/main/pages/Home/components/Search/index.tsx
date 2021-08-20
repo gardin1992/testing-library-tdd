@@ -1,0 +1,26 @@
+import { ReactComponent as SearchIcon } from "assets/icons/search.svg";
+import Icon from "main/components/Icon";
+import { colors } from "styles";
+
+type Props = {
+  query: string;
+  setQuery: any;
+};
+
+export function Search(props: Props) {
+  const { query, setQuery } = props;
+
+  return (
+    <div>
+      <Icon icon={SearchIcon} color={colors.cBlue} title="input-search" />
+      <input
+        aria-label="search-input"
+        placeholder="Buscar Pokemon"
+        value={query}
+        onChange={(event) => {
+          setQuery(event.target.value);
+        }}
+      />
+    </div>
+  );
+}

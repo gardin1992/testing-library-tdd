@@ -1,29 +1,15 @@
 import { render, screen, within } from "@testing-library/react";
 import { PokemonList } from ".";
+import { PokemonListItemProps } from "../PokemonListItem";
 
-const pokemons = [
+const pokemons: PokemonListItemProps[] = [
   {
-    order: 1,
     name: "Bulbasaur",
-    figure: "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/001.png",
-    types: [
-      {
-        name: "grass",
-      },
-      {
-        name: "poison",
-      },
-    ],
+    url: "bulbasaur",
   },
   {
-    order: 4,
     name: "Charmander",
-    figure: "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/004.png",
-    types: [
-      {
-        name: "fire",
-      },
-    ],
+    url: "charmander",
   },
 ];
 

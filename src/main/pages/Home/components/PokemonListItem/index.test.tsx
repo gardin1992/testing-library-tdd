@@ -1,35 +1,14 @@
-import { render, screen, within } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import { PokemonListItem, PokemonListItemProps } from ".";
 
 it("should render PokemonCard", () => {
   const pokemon: PokemonListItemProps = {
-    order: 1,
-    name: "Bulbasaur",
-    figure: "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/001.png",
-    types: [
-      {
-        name: "grass",
-      },
-      {
-        name: "poison",
-      },
-    ],
+    name: "bulbasaur",
+    url: "/bulbasaur",
   };
 
-  render(
-    <PokemonListItem
-      order={pokemon.order}
-      name={pokemon.name}
-      figure={pokemon.figure}
-      types={pokemon.types}
-    />
-  );
+  render(<PokemonListItem name={pokemon.name} url={pokemon.url} />);
 
   const name = screen.getByText(pokemon.name);
   expect(name).toBeInTheDocument();
-
-  const list = screen.getByRole("list");
-  const { getAllByRole } = within(list);
-  const items = getAllByRole("listitem");
-  expect(items.length).toBe(pokemon.types.length);
 });

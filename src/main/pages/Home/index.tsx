@@ -1,40 +1,33 @@
-import { useState } from "react";
-import { PokemonList } from "./components";
+import { useEffect, useState } from "react";
+import { axiosHttpClient } from "services/http/AxiosHttpClient";
+import { PokemonList, PokemonListItemProps } from "./components";
 import { Search } from "./components/Search";
-
-const pokemons = [
-  {
-    order: 1,
-    name: "Bulbasaur",
-    figure: "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/001.png",
-    types: [
-      {
-        name: "grass",
-      },
-      {
-        name: "poison",
-      },
-    ],
-  },
-  {
-    order: 4,
-    name: "Charmander",
-    figure: "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/004.png",
-    types: [
-      {
-        name: "fire",
-      },
-    ],
-  },
-];
 
 function HomePage() {
   const [query, setQuery] = useState("");
 
+  const [pokemon, setPokemons] = useState<PokemonListItemProps[]>([]);
+
+  async function fetchPokemons() {
+    const data = await axiosHttpClient({
+      method: "get",
+      url: "pokemon",
+    });
+
+    const { results } = data.body;
+    setPokemons(results);
+  }
+
+  useEffect(() => {
+    fetchPokemons().catch((err) => {
+      console.log("error on fetching pokemons", err);
+    });
+  }, []);
+
   return (
     <div className="c-home-page">
       <Search query={query} setQuery={setQuery} />
-      <PokemonList pokemons={pokemons} />
+      <PokemonList pokemons={pokemon} />
     </div>
   );
 }

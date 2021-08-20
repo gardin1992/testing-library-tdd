@@ -11,11 +11,9 @@ export function PokemonList(props: PokemonListProps) {
     <section data-testid="pokemon-list">
       {pokemons.map((pokemon) => (
         <PokemonListItem
-          key={`${pokemon.order}_${pokemon.name}`}
-          order={pokemon.order}
+          key={`${pokemon.name}`}
           name={pokemon.name}
-          figure={pokemon.figure}
-          types={pokemon.types}
+          url={pokemon.url}
         />
       ))}
     </section>

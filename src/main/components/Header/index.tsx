@@ -2,7 +2,7 @@ import { ReactComponent as MenuClosed } from "assets/icons/menu-closed.svg";
 import { ReactComponent as MenuOpened } from "assets/icons/menu-opened.svg";
 import { useState } from "react";
 import { colors } from "styles";
-import Icon from "../Icon";
+import { Icon } from "../Icon";
 import { Dropdown } from "./Dropdown";
 import * as S from "./styles";
 

@@ -1,5 +1,5 @@
 import { ReactComponent as SearchIcon } from "assets/icons/search.svg";
-import Icon from "main/components/Icon";
+import { Icon } from "main/components/Icon";
 import { colors } from "styles";
 import * as S from "./styles";
 

@@ -2,18 +2,19 @@ export type PokemonTypeProps = {
   name: string;
 };
 
-export type PokemonCardProps = {
+export type PokemonListItemProps = {
   order: number;
   name: string;
   figure: string;
   types: PokemonTypeProps[];
+  role?: string;
 };
 
-export function PokemonCard(props: PokemonCardProps) {
+export function PokemonListItem(props: PokemonListItemProps) {
   const { order, name, figure, types } = props;
 
   return (
-    <article>
+    <article data-testid="pokemon-list-item">
       <div>
         <figure>
           <img src={figure} alt={name} title={name} />
@@ -30,3 +31,7 @@ export function PokemonCard(props: PokemonCardProps) {
     </article>
   );
 }
+
+PokemonListItem.defaultProps = {
+  role: "",
+};

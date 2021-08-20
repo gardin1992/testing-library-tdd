@@ -1,8 +1,8 @@
 import { render, screen, within } from "@testing-library/react";
-import { PokemonCard, PokemonCardProps } from ".";
+import { PokemonListItem, PokemonListItemProps } from ".";
 
 it("should render PokemonCard", () => {
-  const pokemon: PokemonCardProps = {
+  const pokemon: PokemonListItemProps = {
     order: 1,
     name: "Bulbasaur",
     figure: "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/001.png",
@@ -17,7 +17,7 @@ it("should render PokemonCard", () => {
   };
 
   render(
-    <PokemonCard
+    <PokemonListItem
       order={pokemon.order}
       name={pokemon.name}
       figure={pokemon.figure}

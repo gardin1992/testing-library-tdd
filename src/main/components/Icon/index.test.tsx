@@ -1,6 +1,6 @@
 import { screen, render, fireEvent } from "@testing-library/react";
 import { ReactComponent as MenuSvg } from "assets/icons/menu-closed.svg";
-import Icon from ".";
+import { Icon } from ".";
 
 it("should render icon from svg", () => {
   let clicked = false;

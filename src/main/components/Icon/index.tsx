@@ -10,7 +10,7 @@ type Props = {
   onClick?: (event: React.MouseEvent<HTMLElement>) => void;
 };
 
-function Icon(props: Props) {
+export function Icon(props: Props) {
   const { icon: Component, size, variant, color, title, onClick } = props;
 
   return (
@@ -33,5 +33,3 @@ Icon.defaultProps = {
   title: "icon",
   onClick: undefined,
 };
-
-export default Icon;

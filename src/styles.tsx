@@ -7,6 +7,7 @@ export const colors = {
   cBlue: "#2d6bb4",
   cBlack: "#232323",
   cGray: "#c4c4c4",
+  cWhite: "#ffffff",
   tGrass: "#9BCC50",
   tPoison: "#B97FC9",
   tFire: "#FD7D24",

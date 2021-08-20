@@ -1,4 +1,5 @@
 import Header from "main/components/Header";
+import { NotFound } from "main/pages/NotFound";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { routes } from "./routes";
 
@@ -15,6 +16,8 @@ function Router() {
             path={route.path}
           />
         ))}
+
+        <Route component={NotFound} path="*" />
       </Switch>
     </BrowserRouter>
   );

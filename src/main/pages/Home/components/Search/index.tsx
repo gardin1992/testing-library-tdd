@@ -1,6 +1,7 @@
 import { ReactComponent as SearchIcon } from "assets/icons/search.svg";
 import Icon from "main/components/Icon";
 import { colors } from "styles";
+import * as S from "./styles";
 
 type Props = {
   query: string;
@@ -11,7 +12,7 @@ export function Search(props: Props) {
   const { query, setQuery } = props;
 
   return (
-    <div>
+    <S.Search className="c-input-search">
       <Icon icon={SearchIcon} color={colors.cBlue} title="input-search" />
       <input
         aria-label="search-input"
@@ -21,6 +22,6 @@ export function Search(props: Props) {
           setQuery(event.target.value);
         }}
       />
-    </div>
+    </S.Search>
   );
 }
